@@ -1,13 +1,14 @@
 import { Route, Routes, Navigate } from 'react-router-dom'
 import './App.css'
 import { useState } from 'react'
+import userService from './utils/userService'
 
+// Pages
 import HomePage from './pages/HomePage/HomePage'
 import LoginPage from './pages/LoginPage/LoginPage'
 import SignupPage from './pages/SignupPage/SignupPage'
 import LocationPage from './pages/LocationPage/LocationPage'
 import PinnedLocationsPage from './pages/PinnedLocationsPage/PinnedLocationsPage'
-import userService from './utils/userService'
 
 function App() {
   // Defining the state that will hold the logged in user if it finds a token or null if it does not

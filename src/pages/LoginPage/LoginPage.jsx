@@ -45,7 +45,7 @@ export default function LoginPage({ handleSignUpOrLogin }) {
     <Grid textAlign="center" style={{ height: '100vh' }} verticalAlign="middle">
       <Grid.Column style={{ maxWidth: 450 }}>
         <Header as="h2" color="red" textAlign="center">
-          <Image src="/logo.png" /> Log in to your account
+          Log in to your account
         </Header>
         <Form size="large" onSubmit={handleSubmit}>
           <Segment stacked>
@@ -53,7 +53,7 @@ export default function LoginPage({ handleSignUpOrLogin }) {
               type="email"
               name="email"
               value={state.email}
-              placeholder="E-mail address"
+              placeholder="e-mail address"
               onChange={handleChange}
               required
             />
