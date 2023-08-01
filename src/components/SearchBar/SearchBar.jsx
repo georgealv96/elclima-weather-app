@@ -1,6 +1,6 @@
 import { useState } from 'react'
 
-export default function SearchBar() {
+export default function SearchBar({ getSearchedLocation }) {
   // Defining the state that updates the changes in the search bar
   const [searchForm, setSearchForm] = useState('')
 
@@ -10,6 +10,8 @@ export default function SearchBar() {
 
   function handleSubmit(e) {
     e.preventDefault()
+    getSearchedLocation(searchForm)
+    setSearchForm('')
   }
 
   return (
