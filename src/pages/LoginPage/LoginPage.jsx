@@ -10,6 +10,7 @@ import {
 } from 'semantic-ui-react'
 import { useState } from 'react'
 import userService from '../../utils/userService'
+import { Link, useNavigate } from 'react-router-dom'
 
 export default function LoginPage({ handleSignUpOrLogin }) {
   // Defining the state that updates changes in the form
@@ -19,6 +20,8 @@ export default function LoginPage({ handleSignUpOrLogin }) {
   })
 
   const [error, setError] = useState('')
+
+  const navigate = useNavigate()
 
   // Defining the function that handles any change in the form
   function handleChange(e) {
@@ -34,6 +37,7 @@ export default function LoginPage({ handleSignUpOrLogin }) {
     try {
       // Making the HTTP request to the server
       await userService.login(state)
+      navigate('/')
       handleSignUpOrLogin()
     } catch (err) {
       setError('Check terminal and console')
@@ -70,7 +74,9 @@ export default function LoginPage({ handleSignUpOrLogin }) {
             </Button>
           </Segment>
         </Form>
-        <Message>New to us? Sign Up</Message>
+        <Message>
+          New to us? <Link to="/signup">Create an account</Link>
+        </Message>
       </Grid.Column>
     </Grid>
   )

@@ -9,6 +9,7 @@ import LoginPage from './pages/LoginPage/LoginPage'
 import SignupPage from './pages/SignupPage/SignupPage'
 import LocationPage from './pages/LocationPage/LocationPage'
 import PinnedLocationsPage from './pages/PinnedLocationsPage/PinnedLocationsPage'
+import SearchPage from './pages/SearchPage/SearchPage'
 
 function App() {
   // Defining the state that will hold the logged in user if it finds a token or null if it does not
@@ -43,6 +44,34 @@ function App() {
     if (searchedLocation) getWeatherInfo()
   }, [searchedLocation])
 
+  // If there's not a user logged in, render the following routes
+  if (!user) {
+    return (
+      <Routes>
+        <Route
+          path="/"
+          element={<HomePage getSearchedLocation={getSearchedLocation} />}
+        />
+        <Route
+          path="/login"
+          element={<LoginPage handleSignUpOrLogin={handleSignUpOrLogin} />}
+        />
+        <Route
+          path="/signup"
+          element={<SignupPage handleSignUpOrLogin={handleSignUpOrLogin} />}
+        />
+        <Route path="/search" element={<SearchPage />} />
+        {/* Since no user is logged in, this route (/mylocations) will automatically redirect to the LoginPage */}
+        <Route path="/mylocations" element={<Navigate to="/login" replace />} />
+        <Route
+          path="/:id"
+          element={<LocationPage location={searchedLocation} />}
+        />
+      </Routes>
+    )
+  }
+
+  // If there's a user logged in, render the following routes
   return (
     <Routes>
       <Route
@@ -56,6 +85,10 @@ function App() {
       <Route
         path="/signup"
         element={<SignupPage handleSignUpOrLogin={handleSignUpOrLogin} />}
+      />
+      <Route
+        path="/search"
+        element={<SearchPage getSearchedLocation={getSearchedLocation} />}
       />
       <Route path="/mylocations" element={<PinnedLocationsPage />} />
       <Route

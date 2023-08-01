@@ -9,6 +9,7 @@ import {
 } from 'semantic-ui-react'
 import { useState } from 'react'
 import userService from '../../utils/userService'
+import { Link } from 'react-router-dom'
 
 export default function SignupPage({ handleSignUpOrLogin }) {
   // Defining the state that updates changes in the form
@@ -85,6 +86,9 @@ export default function SignupPage({ handleSignUpOrLogin }) {
           </Segment>
           {/* {error ? <ErrorMessage error={error} /> : null} */}
         </Form>
+        <Message>
+          Already have an account? <Link to="/login">Sign In</Link>
+        </Message>
       </Grid.Column>
     </Grid>
   )

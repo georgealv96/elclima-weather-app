@@ -1,8 +1,11 @@
 import { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 
 export default function SearchBar({ getSearchedLocation }) {
   // Defining the state that updates the changes in the search bar
   const [searchForm, setSearchForm] = useState('')
+
+  const navigate = useNavigate()
 
   function handleChange(e) {
     setSearchForm(e.target.value)
@@ -12,6 +15,7 @@ export default function SearchBar({ getSearchedLocation }) {
     e.preventDefault()
     getSearchedLocation(searchForm)
     setSearchForm('')
+    navigate('/search')
   }
 
   return (
