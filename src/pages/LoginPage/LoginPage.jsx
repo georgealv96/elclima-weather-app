@@ -1,4 +1,3 @@
-import React from 'react'
 import './LoginPage.css'
 import {
   Button,
@@ -38,7 +37,7 @@ export default function LoginPage({ handleSignUpOrLogin }) {
       handleSignUpOrLogin()
     } catch (err) {
       setError('Check terminal and console')
-      console.log(err)
+      console.log(err, ' error in handleSubmit')
     }
   }
 

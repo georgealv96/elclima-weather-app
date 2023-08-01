@@ -25,7 +25,10 @@ function App() {
         path="/login"
         element={<LoginPage handleSignUpOrLogin={handleSignUpOrLogin} />}
       />
-      <Route path="/signup" element={<SignupPage />} />
+      <Route
+        path="/signup"
+        element={<SignupPage handleSignUpOrLogin={handleSignUpOrLogin} />}
+      />
       <Route path="/mylocations" element={<PinnedLocationsPage />} />
       <Route path="/:id" element={<LocationPage />} />
     </Routes>
