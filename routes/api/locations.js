@@ -4,7 +4,8 @@ const locationsCtrl = require('../../controllers/locations')
 
 /*---------- Public Routes ----------*/
 
-// router.get('/', locationsCtrl.index)
+// POST '/api/locations'
+router.post('/', locationsCtrl.create)
 
 /*---------- Protected Routes ----------*/
 

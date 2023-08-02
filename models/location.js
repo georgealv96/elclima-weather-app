@@ -4,7 +4,7 @@ const locationSchema = new mongoose.Schema({
   user: { type: mongoose.Schema.Types.ObjectId, ref: 'User' },
   city: String,
   country: String,
-  id: String
+  url: String
 })
 
 module.exports = mongoose.model('Location', locationSchema)
