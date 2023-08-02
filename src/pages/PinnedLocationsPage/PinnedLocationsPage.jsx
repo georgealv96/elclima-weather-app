@@ -10,9 +10,8 @@ export default function PinnedLocationsPage() {
   async function getLocations() {
     try {
       const response = await locationApi.getAllLocations()
-      console.log(response)
       // Getting the array of locations pinned by the user and setting them to the locations state
-      setLocations(response)
+      setLocations(response.locations)
     } catch (err) {
       console.log(err, ' error in getLocations')
       // setError

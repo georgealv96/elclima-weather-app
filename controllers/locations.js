@@ -24,7 +24,10 @@ async function create(req, res) {
 
 async function index(req, res) {
   try {
-    const locations = await Location.find({}).populate('user').exec()
+    // Looking for all of the locations that the user logged in has pinned
+    const locations = await Location.find({ user: req.user })
+      .populate('user')
+      .exec()
     res.status(200).json({ locations })
   } catch (err) {
     res.status(400).json({ error: err })
