@@ -7,6 +7,9 @@ const locationsCtrl = require('../../controllers/locations')
 // POST '/api/locations'
 router.post('/', locationsCtrl.create)
 
+// GET '/api/locations'
+router.get('/', locationsCtrl.index)
+
 /*---------- Protected Routes ----------*/
 
 module.exports = router

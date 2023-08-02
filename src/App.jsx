@@ -73,7 +73,7 @@ function App() {
           }
         />
         {/* Since no user is logged in, this route (/mylocations) will automatically redirect to the LoginPage */}
-        <Route path="/mylocations" element={<Navigate to="/login" replace />} />
+        <Route path="/locations" element={<Navigate to="/login" replace />} />
         <Route
           path="/:locationUrl"
           element={<LocationPage location={searchedLocation} />}
@@ -106,7 +106,7 @@ function App() {
           />
         }
       />
-      <Route path="/mylocations" element={<PinnedLocationsPage />} />
+      <Route path="/locations" element={<PinnedLocationsPage />} />
       <Route
         path="/:locationUrl"
         element={<LocationPage location={searchedLocation} />}

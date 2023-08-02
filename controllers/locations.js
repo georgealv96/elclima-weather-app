@@ -1,7 +1,8 @@
 const Location = require('../models/location')
 
 module.exports = {
-  create
+  create,
+  index
 }
 
 async function create(req, res) {
@@ -16,6 +17,15 @@ async function create(req, res) {
     // This will return the user object
     await location.populate('user')
     res.status(201).json({ data: location })
+  } catch (err) {
+    res.status(400).json({ error: err })
+  }
+}
+
+async function index(req, res) {
+  try {
+    const locations = await Location.find({}).populate('user').exec()
+    res.status(200).json({ locations })
   } catch (err) {
     res.status(400).json({ error: err })
   }

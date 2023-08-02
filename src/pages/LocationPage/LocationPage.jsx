@@ -11,13 +11,12 @@ export default function LocationPage() {
   // Taking the param name from the <Route path="/:locationUrl"> in the App.js
   const { locationUrl } = useParams()
 
+  // This state holds the forecast information object from the API
   const [forecast, setForecast] = useState({})
+  // This state holds the condition information object from the API
   const [condition, setCondition] = useState({})
-  const [locationData, setLocationData] = useState({
-    city: '',
-    country: '',
-    url: ''
-  })
+  // This state holds the location information object from the API
+  const [locationData, setLocationData] = useState({})
 
   useEffect(() => {
     async function getForecastInfo() {
