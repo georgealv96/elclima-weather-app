@@ -11,6 +11,8 @@ export default function PinnedLocationsPage() {
     try {
       const response = await locationApi.getAllLocations()
       console.log(response)
+      // Getting the array of locations pinned by the user and setting them to the locations state
+      setLocations(response)
     } catch (err) {
       console.log(err, ' error in getLocations')
       // setError
@@ -24,7 +26,7 @@ export default function PinnedLocationsPage() {
   return (
     <>
       <h1>My Locations</h1>
-      <ForecastPreview />
+      <ForecastPreview locations={locations} />
     </>
   )
 }

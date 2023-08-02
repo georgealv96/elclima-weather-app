@@ -14,7 +14,7 @@ import { Link } from 'react-router-dom'
 export default function SignupPage({ handleSignUpOrLogin }) {
   // Defining the state that updates changes in the form
   const [state, setState] = useState({
-    name: '',
+    username: '',
     email: '',
     password: '',
     passwordConf: ''
@@ -45,12 +45,12 @@ export default function SignupPage({ handleSignUpOrLogin }) {
     <Grid textAlign="center" style={{ height: '100vh' }} verticalAlign="middle">
       <Grid.Column style={{ maxWidth: 450 }}>
         <Header as="h2" color="purple" textAlign="center">
-          <Image src="https://i.imgur.com/TM4eA5g.jpg" /> Sign Up
+          Sign Up
         </Header>
         <Form autoComplete="off" onSubmit={handleSubmit}>
           <Segment stacked>
             <Form.Input
-              name="name"
+              name="username"
               placeholder="first name"
               value={state.name}
               onChange={handleChange}
