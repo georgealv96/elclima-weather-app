@@ -18,6 +18,8 @@ function App() {
   // Defining the state that updates to whatever location the user searches for
   const [searchedLocation, setSearchedLocation] = useState('')
 
+  const [foundLocations, setFoundLocations] = useState([])
+
   // This function will pass whatever the user searches for from the SearchBar component to the HomePage and update the state location that holds that information
   function getSearchedLocation(location) {
     setSearchedLocation(location)
@@ -31,11 +33,12 @@ function App() {
   useEffect(() => {
     console.log('useEffect is running')
     async function getWeatherInfo() {
-      const weatherApiUrl = `http://api.weatherapi.com/v1/current.json?key=f5cc5abf3e7d430c9f9155717230108&q=${searchedLocation}`
+      const weatherApiUrl = `http://api.weatherapi.com/v1/search.json?key=f5cc5abf3e7d430c9f9155717230108&q=${searchedLocation}`
       try {
         const apiResponse = await fetch(weatherApiUrl)
         const data = await apiResponse.json()
         console.log('data > ', data)
+        setFoundLocations(data)
       } catch (err) {
         console.log(err, ' error from API call')
       }
@@ -60,11 +63,19 @@ function App() {
           path="/signup"
           element={<SignupPage handleSignUpOrLogin={handleSignUpOrLogin} />}
         />
-        <Route path="/search" element={<SearchPage />} />
+        <Route
+          path="/search"
+          element={
+            <SearchPage
+              getSearchedLocation={getSearchedLocation}
+              foundLocations={foundLocations}
+            />
+          }
+        />
         {/* Since no user is logged in, this route (/mylocations) will automatically redirect to the LoginPage */}
         <Route path="/mylocations" element={<Navigate to="/login" replace />} />
         <Route
-          path="/:id"
+          path="/:locationUrl"
           element={<LocationPage location={searchedLocation} />}
         />
       </Routes>
@@ -88,11 +99,16 @@ function App() {
       />
       <Route
         path="/search"
-        element={<SearchPage getSearchedLocation={getSearchedLocation} />}
+        element={
+          <SearchPage
+            getSearchedLocation={getSearchedLocation}
+            foundLocations={foundLocations}
+          />
+        }
       />
       <Route path="/mylocations" element={<PinnedLocationsPage />} />
       <Route
-        path="/:id"
+        path="/:locationUrl"
         element={<LocationPage location={searchedLocation} />}
       />
     </Routes>

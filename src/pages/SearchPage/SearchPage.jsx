@@ -1,12 +1,14 @@
 import SearchBar from '../../components/SearchBar/SearchBar'
+import FoundLocation from '../../components/FoundLocation/FoundLocation'
 
-export default function SearchPage({ getSearchedLocation }) {
+export default function SearchPage({ getSearchedLocation, foundLocations }) {
+  const locations = foundLocations.map((location, idx) => (
+    <FoundLocation key={idx} locationInfo={location} />
+  ))
   return (
     <>
-      <h1>
-        This is the search page where all the items the api found will be listed
-      </h1>
       <SearchBar getSearchedLocation={getSearchedLocation} />
+      <ul>{locations}</ul>
     </>
   )
 }
