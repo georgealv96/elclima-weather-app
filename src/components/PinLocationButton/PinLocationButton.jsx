@@ -1,12 +1,24 @@
+import { useState } from 'react'
 import * as locationApi from '../../utils/locationApi'
 
-export default function PinLocationButton({ locationData, user, isPinned }) {
+export default function PinLocationButton({
+  locationData,
+  user,
+  isPinned,
+  getForecastInfo,
+  getPinnedLocations
+}) {
   async function handleSubmit(e) {
-    console.log(locationData)
     e.preventDefault()
     try {
-      // Defining the response from the back-end
-      await locationApi.removeLocation(locationData.url)
+      if (isPinned) {
+        // Defining the response from the back-end
+        await locationApi.removeLocation(locationData.url)
+      } else {
+        await locationApi.create(locationData)
+      }
+      getForecastInfo()
+      getPinnedLocations()
     } catch (err) {
       console.log(err, ' error in handleSubmit PinLocationButton')
     }
