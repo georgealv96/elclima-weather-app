@@ -1,7 +1,8 @@
 import * as locationApi from '../../utils/locationApi'
 
-export default function PinLocationButton({ locationData, user }) {
+export default function PinLocationButton({ locationData, user, isPinned }) {
   async function handleSubmit(e) {
+    console.log(isPinned)
     e.preventDefault()
     try {
       // Defining the response from the back-end
@@ -13,7 +14,13 @@ export default function PinLocationButton({ locationData, user }) {
 
   return (
     <form onSubmit={handleSubmit}>
-      {user ? <button>PIN LOCATION</button> : null}
+      {user ? (
+        isPinned ? (
+          <button>UNPIN LOCATION</button>
+        ) : (
+          <button>PIN LOCATION</button>
+        )
+      ) : null}
     </form>
   )
 }
