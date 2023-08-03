@@ -24,10 +24,17 @@ nav a, nav a:hover {
   color: white;
 }
 
-#buttons {
+#buttons-in, #buttons-out {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-evenly;
   align-items: center;
-  width: 30vmin;
   padding-right: 4vmin;
+}
+
+#buttons-out {
+  width: 30vmin;
+}
+
+#buttons-in {
+  width: 40vmin;
 }

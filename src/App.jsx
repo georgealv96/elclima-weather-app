@@ -69,6 +69,12 @@ function App() {
     }
   }
 
+  // This function will remove the JWT token from local storage and log the user out
+  function handleLogOut() {
+    setUser(userService.logout())
+    setUser(null)
+  }
+
   console.log(pinnedLocations)
   // If there's not a user logged in, render the following routes
   if (!user) {
@@ -76,7 +82,13 @@ function App() {
       <Routes>
         <Route
           path="/"
-          element={<HomePage getSearchedLocation={getSearchedLocation} />}
+          element={
+            <HomePage
+              getSearchedLocation={getSearchedLocation}
+              user={user}
+              handleLogOut={handleLogOut}
+            />
+          }
         />
         <Route
           path="/login"
@@ -107,7 +119,13 @@ function App() {
     <Routes>
       <Route
         path="/"
-        element={<HomePage getSearchedLocation={getSearchedLocation} />}
+        element={
+          <HomePage
+            getSearchedLocation={getSearchedLocation}
+            user={user}
+            handleLogOut={handleLogOut}
+          />
+        }
       />
       <Route
         path="/login"
