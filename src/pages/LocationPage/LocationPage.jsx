@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react'
 
 import PinLocationButton from '../../components/PinLocationButton/PinLocationButton'
 
-export default function LocationPage() {
+export default function LocationPage({ user }) {
   // This is the base URL to the API to search for the specific location's current forecast
   const currentForecastUrl =
     'http://api.weatherapi.com/v1/current.json?key=f5cc5abf3e7d430c9f9155717230108&q='
@@ -43,7 +43,7 @@ export default function LocationPage() {
       <h3>{forecast.temp_c} degrees Celsius</h3>
       <img src={condition.icon} alt={condition.text} />
       <h3>{condition.text}</h3>
-      <PinLocationButton locationData={locationData} />
+      <PinLocationButton locationData={locationData} user={user} />
     </>
   )
 }

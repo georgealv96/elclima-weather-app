@@ -1,11 +1,11 @@
 import * as locationApi from '../../utils/locationApi'
 
-export default function PinLocationButton({ locationData }) {
+export default function PinLocationButton({ locationData, user }) {
   async function handleSubmit(e) {
     e.preventDefault()
     try {
       // Defining the response from the back-end
-      const responseData = await locationApi.create(locationData)
+      await locationApi.create(locationData)
     } catch (err) {
       console.log(err, ' error in handleSubmit PinLocationButton')
     }
@@ -13,7 +13,7 @@ export default function PinLocationButton({ locationData }) {
 
   return (
     <form onSubmit={handleSubmit}>
-      <button>PIN LOCATION</button>
+      {user ? <button>PIN LOCATION</button> : null}
     </form>
   )
 }

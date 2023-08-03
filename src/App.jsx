@@ -2,6 +2,7 @@ import { Route, Routes, Navigate } from 'react-router-dom'
 import './App.css'
 import { useState, useEffect } from 'react'
 import userService from './utils/userService'
+import weatherApi from './utils/weatherApi'
 
 // Pages
 import HomePage from './pages/HomePage/HomePage'
@@ -32,7 +33,7 @@ function App() {
 
   useEffect(() => {
     console.log('useEffect is running')
-    async function getWeatherInfo() {
+    async function searchForLocation() {
       const weatherApiUrl = `http://api.weatherapi.com/v1/search.json?key=f5cc5abf3e7d430c9f9155717230108&q=${searchedLocation}`
       try {
         const apiResponse = await fetch(weatherApiUrl)
@@ -44,7 +45,7 @@ function App() {
       }
     }
 
-    if (searchedLocation) getWeatherInfo()
+    if (searchedLocation) searchForLocation()
   }, [searchedLocation])
 
   // If there's not a user logged in, render the following routes
@@ -74,10 +75,7 @@ function App() {
         />
         {/* Since no user is logged in, this route (/mylocations) will automatically redirect to the LoginPage */}
         <Route path="/locations" element={<Navigate to="/login" replace />} />
-        <Route
-          path="/:locationUrl"
-          element={<LocationPage location={searchedLocation} />}
-        />
+        <Route path="/:locationUrl" element={<LocationPage user={user} />} />
       </Routes>
     )
   }
@@ -107,10 +105,7 @@ function App() {
         }
       />
       <Route path="/locations" element={<PinnedLocationsPage />} />
-      <Route
-        path="/:locationUrl"
-        element={<LocationPage location={searchedLocation} />}
-      />
+      <Route path="/:locationUrl" element={<LocationPage user={user} />} />
     </Routes>
   )
 }
