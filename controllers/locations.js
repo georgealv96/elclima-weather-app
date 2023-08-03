@@ -2,7 +2,8 @@ const Location = require('../models/location')
 
 module.exports = {
   create,
-  index
+  index,
+  delete: deleteLocation
 }
 
 async function create(req, res) {
@@ -29,6 +30,20 @@ async function index(req, res) {
       .populate('user')
       .exec()
     res.status(200).json({ locations })
+  } catch (err) {
+    res.status(400).json({ error: err })
+  }
+}
+
+async function deleteLocation(req, res) {
+  try {
+    const location = await Location.findOne({
+      user: req.user,
+      url: req.params.locationUrl
+    })
+    location.remove(req.params.id)
+    await location.save()
+    res.json({ data: 'Location removed' })
   } catch (err) {
     res.status(400).json({ error: err })
   }

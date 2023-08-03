@@ -21,6 +21,8 @@ export default function LocationPage({
   const [condition, setCondition] = useState({})
   // This state holds the location information object from the API
   const [locationData, setLocationData] = useState({})
+  // This state provides if a location is pinned or not
+  // const [isPinned, setIsPinned] = useState(false)
 
   async function getForecastInfo() {
     const apiResponse = await fetch(currentForecastUrl + locationUrl)
@@ -42,7 +44,6 @@ export default function LocationPage({
 
   const isPinned = pinnedLocations.some((location) => location === locationUrl)
 
-  console.log(isPinned)
   return (
     <>
       <h1>
