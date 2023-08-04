@@ -1,41 +1,41 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@1,300&family=Questrial&display=swap');
 
-nav {
+.PageHeader {
   display: flex;
   justify-content: space-between;
   align-items: center;
   height: 8vmin;
-  background-color: #709DCB;
+  background-color: #5373A6;
   font-size: 3vmin;
   color: white;
 }
 
-#logo {
+.PageHeader #logo {
   font-size: 5vmin;
   font-family: 'Questrial', sans-serif;
   padding: 1vmin 0 0 5vmin;
 }
 
-#logo span {
+.PageHeader #logo span {
   font-size: 2.5vmin;
   font-family: 'Nunito', sans-serif;
 }
 
-nav a, nav a:hover {
+.PageHeader a, .PageHeader a:hover {
   color: white;
 }
 
-#buttons-in, #buttons-out {
+.PageHeader #buttons-in, .PageHeader #buttons-out {
   display: flex;
   justify-content: space-evenly;
   align-items: center;
   padding-right: 4vmin;
 }
 
-#buttons-out {
+.PageHeader #buttons-out {
   width: 30vmin;
 }
 
-#buttons-in {
+.PageHeader #buttons-in {
   width: 40vmin;
 }

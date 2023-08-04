@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@1,300&family=Questrial&display=swap');
 
-main {
+.LoginPage {
   width: 100vw;
   height: 100vh;
   display: flex;
@@ -9,30 +9,50 @@ main {
   align-items: center;
 }
 
-/* #logo {
+.LoginPage #logo {
   font-family: 'Questrial', sans-serif;
   color: #5373A6;
   font-size: 10vmin;
   padding: 0 0 4vmin 0;
 }
 
-#logo span {
+.LoginPage #logo span {
   font-family: 'Nunito', sans-serif;
   font-size: 5vmin;
-} */
+}
 
-#form {
-  /* display: grid;
-  grid-template-columns: auto;
-  grid-template-rows: 16vmin 5vmin auto;
-  background-color: #709DCB; */
-  background-color: black;
+.LoginPage #form-container {
+  background-color: #5373A6;
   color: white;
   width: 60vmin;
   height: 70vmin;
   border-radius: 1vmin;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-button {
-  min-width: 50vmin;
+.LoginPage form {
+  display: flex;
+  flex-direction: column;
+}
+
+.LoginPage button {
+  border: none;
+  border-radius: 5px;
+  font-size: 3vmin;
+  padding: 1vmin;
+  color: #334870;
+  margin: 5vmin;
+  width: 40vmin;
+}
+
+.LoginPage input {
+  padding-left: 2.5vmin;
+  border: none;
+  border-radius: 5px;
+  width: 40vmin;
+  height: 5vmin;
+  align-self: center;
+  margin: 1vmin;
 }

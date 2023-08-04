@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
+import './SearchBar.css'
 
 export default function SearchBar({ getSearchedLocation }) {
   // Defining the state that updates the changes in the search bar
@@ -19,7 +20,7 @@ export default function SearchBar({ getSearchedLocation }) {
   }
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form className="SearchBar" onSubmit={handleSubmit}>
       <input
         type="text"
         placeholder="search for a city"

@@ -4,7 +4,7 @@ import './Header.css'
 
 export default function PageHeader({ user, handleLogOut }) {
   return (
-    <nav>
+    <nav className="PageHeader">
       <Link to="/">
         <section id="logo">
           ElClima<span>weather</span>
