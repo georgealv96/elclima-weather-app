@@ -1,5 +1,82 @@
-/* #root {
-  max-width: 1280px;
-  margin: 0 auto;
+/* Styling of LoginPage and SignupPage below */
+
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@1,300&family=Questrial&display=swap');
+
+.LoginPage, .SignupPage {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(225, 225, 225);
+}
+
+.LoginPage #logo, .SignupPage #logo {
+  font-family: 'Questrial', sans-serif;
+  color: #5373A6;
+  font-size: 10vmin;
+  padding: 0 0 4vmin 0;
+}
+
+.LoginPage #logo span, .SignupPage #logo span {
+  font-family: 'Nunito', sans-serif;
+  font-size: 5vmin;
+}
+
+.LoginPage #form-container, .SignupPage #form-container {
+  padding: 10vmin;
+  background-color: #5373A6;
+  color: white;
+  width: 60vmin;
+  height: 70vmin;
+  border-radius: 1vmin;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.SignupPage #form-container {
+  padding-top: 7vmin;
+}
+
+.LoginPage #form-container div {
+  margin: 10vmin 0 7vmin 0;
+  font-size: 5vmin;
+}
+
+.SignupPage #form-container h1 {
+  margin-bottom: 10vmin;
+  font-size: 5vmin;
   text-align: center;
-} */
+}
+
+.LoginPage form, .SignupPage form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.LoginPage button, .SignupPage button {
+  border: none;
+  border-radius: 5px;
+  font-size: 3vmin;
+  padding: 1vmin;
+  color: #334870;
+  /* margin: 5vmin; */
+  width: 40vmin;
+  cursor: pointer;
+}
+
+.LoginPage input, .SignupPage input {
+  padding-left: 2.5vmin;
+  border: none;
+  border-radius: 5px;
+  width: 40vmin;
+  height: 5vmin;
+  align-self: center;
+  margin-bottom: 2vmin;
+  font-size: 2vmin;
+}
+
+/* End of the styling of LoginPage and SignupPage */

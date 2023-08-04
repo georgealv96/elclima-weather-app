@@ -1,4 +1,4 @@
-import './LoginPage.css'
+import '../../App.css'
 import {
   Button,
   Form,
@@ -52,10 +52,10 @@ export default function LoginPage({ handleSignUpOrLogin }) {
       </div>
       <section id="form-container">
         <button>Create an account with us!</button>
-        <h2>Sign In</h2>
+        <div>Sign In</div>
         <form onSubmit={handleSubmit}>
           <input
-            type="text"
+            type="email"
             name="email"
             value={state.email}
             placeholder="e-mail address"
@@ -63,7 +63,7 @@ export default function LoginPage({ handleSignUpOrLogin }) {
             required
           />
           <input
-            type="text"
+            type="password"
             name="password"
             value={state.password}
             placeholder="password"
