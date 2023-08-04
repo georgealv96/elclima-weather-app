@@ -1,0 +1,11 @@
+.SearchPage ul {
+  display: flex;
+  flex-direction: column;
+  margin: 10vmin auto;
+  list-style-type: none;
+}
+
+.SearchPage li {
+  font-size: 5vmin;
+  min-height: 10vmin
+}

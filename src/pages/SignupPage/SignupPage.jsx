@@ -78,6 +78,9 @@ export default function SignupPage({ handleSignUpOrLogin }) {
           />
           <button>Sign up</button>
         </form>
+        <div id="message">
+          Already have an account with us? <Link to="/login">Log in</Link>
+        </div>
       </section>
     </main>
 

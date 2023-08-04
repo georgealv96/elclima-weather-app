@@ -1,3 +1,4 @@
+import './SearchPage.css'
 import SearchBar from '../../components/SearchBar/SearchBar'
 import FoundLocation from '../../components/FoundLocation/FoundLocation'
 import PageHeader from '../../components/Header/Header'
@@ -12,10 +13,10 @@ export default function SearchPage({
     <FoundLocation key={idx} locationInfo={location} />
   ))
   return (
-    <>
+    <main className="SearchPage">
       <PageHeader user={user} handleLogOut={handleLogOut} />
       <SearchBar getSearchedLocation={getSearchedLocation} />
       <ul>{locations}</ul>
-    </>
+    </main>
   )
 }

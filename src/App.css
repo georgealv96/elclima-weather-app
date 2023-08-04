@@ -63,7 +63,6 @@
   font-size: 3vmin;
   padding: 1vmin;
   color: #334870;
-  /* margin: 5vmin; */
   width: 40vmin;
   cursor: pointer;
 }
@@ -79,4 +78,14 @@
   font-size: 2vmin;
 }
 
+.SignupPage #message {
+  margin-top: 2vmin;
+  font-size: 2vmin;
+}
+
+.SignupPage a {
+  color: white;
+  text-decoration: underline;
+  cursor: pointer;
+}
 /* End of the styling of LoginPage and SignupPage */

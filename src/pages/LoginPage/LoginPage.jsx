@@ -47,11 +47,15 @@ export default function LoginPage({ handleSignUpOrLogin }) {
 
   return (
     <main className="LoginPage">
-      <div id="logo">
-        ElClima<span>weather</span>
-      </div>
+      <Link to="/">
+        <div id="logo">
+          ElClima<span>weather</span>
+        </div>
+      </Link>
       <section id="form-container">
-        <button>Create an account with us!</button>
+        <Link to="/signup">
+          <button>Create an account with us!</button>
+        </Link>
         <div>Sign In</div>
         <form onSubmit={handleSubmit}>
           <input
