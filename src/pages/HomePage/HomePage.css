@@ -1,6 +1,28 @@
+.HomePage {
+  background-color: rgb(225, 225, 225);
+  height: 100vh;
+}
+
 .HomePage h1 {
   margin: 5vmin 0 0 0;
   font-size: 5vmin;
   text-align: center;
   color: gray;
+}
+
+.HomePage > section {
+  margin-top: 10vmin;
+  width: 100vw;
+  height: 50vh;
+  display: flex;
+}
+
+.HomePage #container-1 {
+  background-color: blue;
+  width: 50vw;
+}
+
+.HomePage #container-2 {
+  background-color: red;
+  width: 50vw;
 }

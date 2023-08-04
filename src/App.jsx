@@ -11,6 +11,7 @@ import SignupPage from './pages/SignupPage/SignupPage'
 import LocationPage from './pages/LocationPage/LocationPage'
 import PinnedLocationsPage from './pages/PinnedLocationsPage/PinnedLocationsPage'
 import SearchPage from './pages/SearchPage/SearchPage'
+import ForecastPreview from './components/ForecastPreview/ForecastPreview'
 
 function App() {
   // Defining the state that will hold the logged in user if it finds a token or null if it does not
@@ -24,6 +25,8 @@ function App() {
 
   // Defining the state that will hold the current pinned locations by the user
   const [pinnedLocations, setPinnedLocations] = useState([])
+
+  const [loading, setLoading] = useState(true)
 
   // This function will pass whatever the user searches for from the SearchBar component to the HomePage and update the state location that holds that information
   function getSearchedLocation(location) {
@@ -53,13 +56,10 @@ function App() {
     if (searchedLocation) searchForLocation()
   }, [searchedLocation])
 
-  useEffect(() => {
-    getPinnedLocations()
-  }, [])
-
   // This function will provide the list of all the user's pinned locations
   async function getPinnedLocations() {
     try {
+      setLoading(true)
       const response = await locationApi.getAllLocations()
       // Getting the array of locations pinned by the user and setting them to the locations state
       setPinnedLocations(
@@ -67,11 +67,16 @@ function App() {
           return location.url
         })
       )
+      setLoading(false)
     } catch (err) {
       console.log(err, ' error in getLocations')
       // setError
     }
   }
+
+  useEffect(() => {
+    getPinnedLocations()
+  }, [])
 
   // This function will remove the JWT token from local storage and log the user out
   function handleLogOut() {
@@ -79,7 +84,16 @@ function App() {
     setUser(null)
   }
 
-  console.log(pinnedLocations)
+  console.log(pinnedLocations, '!!!')
+
+  const locations = pinnedLocations.map((pinnedLocation, idx) => {
+    return <ForecastPreview pinnedLocation={pinnedLocation} key={idx} />
+  })
+
+  if (loading) {
+    return <h1>loading....</h1>
+  }
+
   // If there's not a user logged in, render the following routes
   if (!user) {
     return (
@@ -91,6 +105,7 @@ function App() {
               getSearchedLocation={getSearchedLocation}
               user={user}
               handleLogOut={handleLogOut}
+              pinnedLocations={pinnedLocations}
             />
           }
         />
@@ -140,6 +155,7 @@ function App() {
             getSearchedLocation={getSearchedLocation}
             user={user}
             handleLogOut={handleLogOut}
+            pinnedLocations={pinnedLocations}
           />
         }
       />
@@ -170,6 +186,7 @@ function App() {
             getPinnedLocations={getPinnedLocations}
             user={user}
             handleLogOut={handleLogOut}
+            locations={locations}
           />
         }
       />
