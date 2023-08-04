@@ -46,6 +46,13 @@ export default function LoginPage({ handleSignUpOrLogin }) {
   }
 
   return (
+    // <main>
+    //   <div id="logo">
+    //     ElClima<span>weather</span>
+    //   </div>
+    //   <section id="form"></section>
+    // </main>
+
     <Grid textAlign="center" style={{ height: '100vh' }} verticalAlign="middle">
       <Grid.Column style={{ maxWidth: 450 }}>
         <Header as="h2" color="red" textAlign="center">

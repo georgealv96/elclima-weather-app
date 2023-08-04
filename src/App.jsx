@@ -53,6 +53,10 @@ function App() {
     if (searchedLocation) searchForLocation()
   }, [searchedLocation])
 
+  useEffect(() => {
+    getPinnedLocations()
+  }, [])
+
   // This function will provide the list of all the user's pinned locations
   async function getPinnedLocations() {
     try {
