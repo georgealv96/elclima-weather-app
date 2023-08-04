@@ -2,11 +2,13 @@ import { useParams } from 'react-router'
 import { useEffect, useState } from 'react'
 
 import PinLocationButton from '../../components/PinLocationButton/PinLocationButton'
+import PageHeader from '../../components/Header/Header'
 
 export default function LocationPage({
   user,
   pinnedLocations,
-  getPinnedLocations
+  getPinnedLocations,
+  handleLogOut
 }) {
   // This is the base URL to the API to search for the specific location's current forecast
   const currentForecastUrl =
@@ -44,6 +46,7 @@ export default function LocationPage({
 
   return (
     <>
+      <PageHeader user={user} handleLogOut={handleLogOut} />
       <h1>
         {locationData.city}, {locationData.region}, {locationData.country}
       </h1>

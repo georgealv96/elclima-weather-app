@@ -29,8 +29,11 @@ export default function ForecastPreview({ pinnedLocation }) {
 
   return (
     <div>
-      {location.location.name} = {location.current.condition.text}{' '}
-      {location.current.temp_f}
+      <Link to={`/${pinnedLocation}`}>
+        {location.location.name} = {location.current.condition.text}{' '}
+        {location.current.temp_f}
+      </Link>
+      <br />
     </div>
   )
 }

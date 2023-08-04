@@ -108,12 +108,24 @@ function App() {
             <SearchPage
               getSearchedLocation={getSearchedLocation}
               foundLocations={foundLocations}
+              user={user}
+              handleLogOut={handleLogOut}
             />
           }
         />
         {/* Since no user is logged in, this route (/mylocations) will automatically redirect to the LoginPage */}
         <Route path="/locations" element={<Navigate to="/login" replace />} />
-        <Route path="/:locationUrl" element={<LocationPage user={user} />} />
+        <Route
+          path="/:locationUrl"
+          element={
+            <LocationPage
+              user={user}
+              pinnedLocations={pinnedLocations}
+              getPinnedLocations={getPinnedLocations}
+              handleLogOut={handleLogOut}
+            />
+          }
+        />
       </Routes>
     )
   }
@@ -145,6 +157,8 @@ function App() {
           <SearchPage
             getSearchedLocation={getSearchedLocation}
             foundLocations={foundLocations}
+            user={user}
+            handleLogOut={handleLogOut}
           />
         }
       />
@@ -154,6 +168,8 @@ function App() {
           <PinnedLocationsPage
             pinnedLocations={pinnedLocations}
             getPinnedLocations={getPinnedLocations}
+            user={user}
+            handleLogOut={handleLogOut}
           />
         }
       />
@@ -164,6 +180,7 @@ function App() {
             user={user}
             pinnedLocations={pinnedLocations}
             getPinnedLocations={getPinnedLocations}
+            handleLogOut={handleLogOut}
           />
         }
       />
