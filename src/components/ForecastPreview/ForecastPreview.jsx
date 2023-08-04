@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
 import { useEffect, useState } from 'react'
+import './ForecastPreview.css'
 
 export default function ForecastPreview({ pinnedLocation }) {
   // This is the base URL to the API to search for the specific location's current forecast
@@ -24,11 +25,11 @@ export default function ForecastPreview({ pinnedLocation }) {
   }, [pinnedLocation])
 
   if (loading) {
-    return <h1>loading....</h1>
+    return null
   }
 
   return (
-    <div>
+    <div className="ForecastPreview">
       <Link to={`/${pinnedLocation}`}>
         {location.location.name} = {location.current.condition.text}{' '}
         {location.current.temp_f}

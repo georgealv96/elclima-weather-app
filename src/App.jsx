@@ -91,7 +91,7 @@ function App() {
   })
 
   if (loading) {
-    return <h1>loading....</h1>
+    return null
   }
 
   // If there's not a user logged in, render the following routes
