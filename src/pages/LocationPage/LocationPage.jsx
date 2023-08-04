@@ -39,7 +39,6 @@ export default function LocationPage({
 
   useEffect(() => {
     getForecastInfo()
-    getPinnedLocations()
   }, [])
 
   const isPinned = pinnedLocations.some((location) => location === locationUrl)
