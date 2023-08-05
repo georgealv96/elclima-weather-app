@@ -8,6 +8,7 @@
   text-align: center;
   font-size: 5vmin;
   color: #27395a;
+  margin-top: 5vmin;
 }
 
 .PinnedLocationsPage #locations-list-container {
@@ -16,4 +17,29 @@
   flex-wrap: wrap;
   gap: 3vmin;
   justify-content: center;
+}
+
+.PinnedLocationsPage #locations-empty-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 50vmin;
+  /* border: black solid 2px; */
+}
+
+#locations-empty-container p {
+  font-size: 3vmin;
+  font-family: 'Nunito', sans-serif;
+}
+
+#locations-empty-container button {
+  border: none;
+  border-radius: 5px;
+  font-size: 2.5vmin;
+  background-color: #334870;
+  color: white;
+  padding: 1.5vmin;
+  margin-top: 2vmin;
+  cursor: pointer;
 }

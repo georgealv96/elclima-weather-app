@@ -4,7 +4,7 @@ export default function FoundLocation(props) {
   return (
     <li>
       <Link to={`/${props.locationInfo.url}`}>
-        {props.locationInfo.name}, {props.locationInfo.region},{' '}
+        &#8680; {props.locationInfo.name}, {props.locationInfo.region},{' '}
         {props.locationInfo.country}
       </Link>
     </li>

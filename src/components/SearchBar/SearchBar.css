@@ -19,7 +19,8 @@
   width: 20vmin;
   border: none;
   padding: 1vmin;
-  background-color: #5373A6;
+  background-color: #334870;
   color: white;
   border-radius: 5px;
+  cursor: pointer;
 }

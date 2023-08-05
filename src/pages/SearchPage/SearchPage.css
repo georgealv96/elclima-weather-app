@@ -9,3 +9,8 @@
   font-size: 5vmin;
   min-height: 10vmin
 }
+
+.SearchPage ul a {
+  color: #27395a;
+  font-family: 'Questrial', sans-serif;
+}
