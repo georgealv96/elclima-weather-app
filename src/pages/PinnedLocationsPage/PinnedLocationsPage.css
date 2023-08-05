@@ -1,12 +1,13 @@
 .PinnedLocationsPage {
-  height: 100vh;
+  min-height: 100vh;
   background-color: rgb(225, 225, 225);
+  padding-bottom: 5vmin;
 }
 
 .PinnedLocationsPage h1 {
   text-align: center;
   font-size: 5vmin;
-  color: #334870;
+  color: #27395a;
 }
 
 .PinnedLocationsPage #locations-list-container {

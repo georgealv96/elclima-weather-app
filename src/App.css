@@ -1,10 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@1,300&family=Questrial&display=swap');
+
 a {
   color: black;
 }
 
-/* Styling of LoginPage and SignupPage below */
+a:hover {
+  color: black;
+}
 
-@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@1,300&family=Questrial&display=swap');
+/* Styling of LoginPage and SignupPage below */
 
 .LoginPage, .SignupPage {
   width: 100vw;

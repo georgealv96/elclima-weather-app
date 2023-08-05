@@ -1,5 +1,27 @@
 .ForecastPreview {
+  border-radius: 5px;
   background-color: #5373A6;
-  width: 30vmin;
-  height: 30vmin;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 3vmin 2vmin;
+  width: 35vmin;
+  min-height: 100%;
 }
+
+.ForecastPreview h1 {
+  margin: 0;
+  color: #334870;
+}
+
+.ForecastPreview h2 {
+  text-align: center;
+  margin-bottom: 2vmin;
+  color: white;
+}
+
+.ForecastPreview h3 {
+  margin: 1vmin 0;
+  color: white;
+}
+

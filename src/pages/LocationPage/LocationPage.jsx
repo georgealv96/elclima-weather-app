@@ -1,5 +1,6 @@
 import { useParams } from 'react-router'
 import { useEffect, useState } from 'react'
+import './LocationPage.css'
 
 import PinLocationButton from '../../components/PinLocationButton/PinLocationButton'
 import PageHeader from '../../components/Header/Header'
@@ -44,7 +45,7 @@ export default function LocationPage({
   const isPinned = pinnedLocations.some((location) => location === locationUrl)
 
   return (
-    <>
+    <main className="LocationPage">
       <PageHeader user={user} handleLogOut={handleLogOut} />
       <h1>
         {locationData.city}, {locationData.region}, {locationData.country}
@@ -59,6 +60,6 @@ export default function LocationPage({
         getForecastInfo={getForecastInfo}
         getPinnedLocations={getPinnedLocations}
       />
-    </>
+    </main>
   )
 }

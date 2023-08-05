@@ -24,17 +24,26 @@ export default function ForecastPreview({ pinnedLocation }) {
     getForecastInfo(pinnedLocation)
   }, [pinnedLocation])
 
+  console.log(location, '!!<<<??')
   if (loading) {
     return null
   }
 
   return (
-    <div className="ForecastPreview">
-      <Link to={`/${pinnedLocation}`}>
-        {location.location.name} = {location.current.condition.text}{' '}
-        {location.current.temp_f}
-      </Link>
-      <br />
-    </div>
+    <Link to={`/${pinnedLocation}`}>
+      <div className="ForecastPreview">
+        <h2>
+          {location.location.name}, {location.location.region},{' '}
+          {location.location.country}
+        </h2>
+        <img
+          src={location.current.condition.icon}
+          alt={location.current.condition.text}
+        />
+        <h3>{location.current.condition.text}</h3>
+        <h1>{Math.round(parseFloat(location.current.temp_f))} °F</h1>
+        <h3>Humidity: {location.current.humidity}%</h3>
+      </div>
+    </Link>
   )
 }

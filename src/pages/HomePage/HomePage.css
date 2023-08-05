@@ -18,12 +18,10 @@
   justify-content: center;
 }
 
-.HomePage #container-1 {
-  background-color: blue;
-  width: 50vw;
-}
-
-.HomePage #container-2 {
-  background-color: red;
-  width: 50vw;
+.HomePage #container-1, .HomePage #container-2 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: black solid 1px;
+  width: 30vw;
 }
