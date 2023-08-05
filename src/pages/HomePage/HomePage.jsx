@@ -4,6 +4,7 @@ import './HomePage.css'
 import SearchBar from '../../components/SearchBar/SearchBar'
 import PageHeader from '../../components/Header/Header'
 import ForecastPreview from '../../components/ForecastPreview/ForecastPreview'
+import { Button } from 'semantic-ui-react'
 
 export default function HomePage({
   getSearchedLocation,
@@ -33,6 +34,9 @@ export default function HomePage({
                 minNumberLongitude
             )}`}
           />
+          <Link to="/search">
+            <button>SEARCH OTHER LOCATIONS</button>
+          </Link>
         </div>
         {user ? (
           <div id="container-2">

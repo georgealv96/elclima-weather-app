@@ -15,6 +15,9 @@ export default function PageHeader({ user, handleLogOut }) {
           <Link to="/">
             <div>Home Page</div>
           </Link>
+          <Link to="/locations">
+            <div>My Locations</div>
+          </Link>
           <Link to="" onClick={handleLogOut}>
             <div>Log out</div>
           </Link>

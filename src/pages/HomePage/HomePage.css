@@ -22,6 +22,11 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  border: black solid 1px;
-  width: 30vw;
+  /* border: black solid 1px; */
+  width: 22.5vw;
+}
+
+#container-1 button, #container-2 button {
+  width: 35vmin;
+  margin-top: 2vmin;
 }
