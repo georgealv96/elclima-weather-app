@@ -8,7 +8,11 @@ export default function PinnedLocationsPage({ user, handleLogOut, locations }) {
     <main className="PinnedLocationsPage">
       <PageHeader user={user} handleLogOut={handleLogOut} />
       <h1>My Locations</h1>
-      <div id="locations-list-container">{locations}</div>
+      {locations.length > 0 ? (
+        <div id="locations-list-container">{locations}</div>
+      ) : (
+        <h2>You have no pinned locations!</h2>
+      )}
     </main>
   )
 }

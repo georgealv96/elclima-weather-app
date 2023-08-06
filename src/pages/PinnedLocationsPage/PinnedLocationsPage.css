@@ -17,3 +17,9 @@
   gap: 3vmin;
   justify-content: center;
 }
+
+.PinnedLocationsPage h2 {
+  padding-top: 4vmin;
+  text-align: center;
+  font-family: 'Questrial', sans-serif;
+}

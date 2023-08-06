@@ -24,7 +24,6 @@ export default function ForecastPreview({ pinnedLocation }) {
     getForecastInfo(pinnedLocation)
   }, [pinnedLocation])
 
-  console.log(location, '!!<<<??')
   if (loading) {
     return null
   }

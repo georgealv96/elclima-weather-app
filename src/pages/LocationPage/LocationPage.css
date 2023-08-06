@@ -1,3 +1,7 @@
-.LocationPage h1 {
-  color: black;
+.LocationPage #location-section {
+  height: 92.5vh;
+  background-color: rgb(225, 225, 225);
+  text-align: center;
+  padding-top: 10vmin;
 }
+

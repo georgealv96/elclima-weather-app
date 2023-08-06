@@ -4,6 +4,7 @@ import './LocationPage.css'
 
 import PinLocationButton from '../../components/PinLocationButton/PinLocationButton'
 import PageHeader from '../../components/Header/Header'
+import ForecastPreview from '../../components/ForecastPreview/ForecastPreview'
 
 export default function LocationPage({
   user,
@@ -47,19 +48,22 @@ export default function LocationPage({
   return (
     <main className="LocationPage">
       <PageHeader user={user} handleLogOut={handleLogOut} />
-      <h1>
-        {locationData.city}, {locationData.region}, {locationData.country}
-      </h1>
-      <h3>{forecast.temp_c} degrees Celsius</h3>
-      <img src={condition.icon} alt={condition.text} />
-      <h3>{condition.text}</h3>
-      <PinLocationButton
-        locationData={locationData}
-        user={user}
-        isPinned={isPinned}
-        getForecastInfo={getForecastInfo}
-        getPinnedLocations={getPinnedLocations}
-      />
+      <section id="location-section">
+        <h1>
+          {locationData.city}, {locationData.region}, {locationData.country}
+        </h1>
+        <h3>{forecast.temp_f} degrees Celsius</h3>
+        <img src={condition.icon} alt={condition.text} />
+        <h3>{condition.text}</h3>
+        <PinLocationButton
+          locationData={locationData}
+          user={user}
+          isPinned={isPinned}
+          getForecastInfo={getForecastInfo}
+          getPinnedLocations={getPinnedLocations}
+        />
+      </section>
+      {/* <ForecastPreview pinnedLocation={locationUrl} /> */}
     </main>
   )
 }
