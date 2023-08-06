@@ -21,7 +21,7 @@ export default function HomePage({
   return (
     <main className="HomePage">
       <PageHeader user={user} handleLogOut={handleLogOut} />
-      {user ? <h1>Welcome, {user.username}</h1> : <h1>Welcome!</h1>}
+      {user ? <h1>Welcome, {user.username}!</h1> : <h1>Welcome!</h1>}
       <SearchBar getSearchedLocation={getSearchedLocation} />
       <section>
         <div id="container-1">
