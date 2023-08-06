@@ -84,7 +84,7 @@ function App() {
     setUser(null)
   }
 
-  console.log(pinnedLocations, '!!!')
+  console.log(user, '!!!')
 
   const locations = pinnedLocations.map((pinnedLocation, idx) => {
     return <ForecastPreview pinnedLocation={pinnedLocation} key={idx} />

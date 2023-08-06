@@ -8,6 +8,7 @@
   text-align: center;
   font-size: 5vmin;
   color: #27395a;
+  margin-top: 5vmin;
 }
 
 .PinnedLocationsPage #locations-list-container {
@@ -16,10 +17,4 @@
   flex-wrap: wrap;
   gap: 3vmin;
   justify-content: center;
-}
-
-.PinnedLocationsPage h2 {
-  padding-top: 4vmin;
-  text-align: center;
-  font-family: 'Questrial', sans-serif;
 }
