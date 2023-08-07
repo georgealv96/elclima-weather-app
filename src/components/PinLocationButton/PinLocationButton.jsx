@@ -13,7 +13,6 @@ export default function PinLocationButton({
     try {
       if (isPinned) {
         // Defining the response from the back-end
-        console.log('entering the remove')
         await locationApi.removeLocation(locationData.url)
       } else {
         await locationApi.create(locationData)

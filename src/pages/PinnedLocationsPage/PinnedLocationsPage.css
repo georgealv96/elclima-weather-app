@@ -11,9 +11,10 @@
   margin-top: 5vmin;
 }
 
-.PinnedLocationsPage h2, .SearchPage h2 {
+.PinnedLocationsPage h4, .SearchPage h4 {
   text-align: center;
   padding-top: 10vmin;
+  font-size: 3.5vmin;
   font-family: 'Questrial', sans-serif;
 }
 

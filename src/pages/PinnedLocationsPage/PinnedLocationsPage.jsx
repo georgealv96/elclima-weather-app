@@ -21,7 +21,7 @@ export default function PinnedLocationsPage({
       {locations.length > 0 ? (
         <div id="locations-list-container">{locations}</div>
       ) : (
-        <h2>You have no locations pinned yet!</h2>
+        <h4>You have no locations pinned yet!</h4>
       )}
     </main>
   )

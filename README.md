@@ -24,5 +24,14 @@ This project was challenging to work on at times but that's what made it such a 
 -Realizing that getting the data from the third-party API takes more time than what the computer does when running the application. <br>
 -Debugging the response from the HTTP delete request. <br>
 -Implementing the useEffect hook on React in an effective way. <br>
+-Designing the architecture of the application on the React side. <br>
+-Debugging issues with the HTTP Delete request in the back-end.
 
-<!-- ## Screenshots of the website:  -->
+## Screenshots of the website:
+
+![Alt text](public/images/img1.png)
+![Alt text](public/images/img2.png)
+![Alt text](public/images/img3.png)
+![Alt text](public/images/img4.png)
+![Alt text](public/images/img5.png)
+![Alt text](public/images/img6.png)

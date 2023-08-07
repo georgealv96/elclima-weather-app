@@ -78,7 +78,6 @@ function App() {
       setLoading(false)
     } catch (err) {
       console.log(err, ' error in getLocations')
-      // setError
     }
   }
 
@@ -110,7 +109,6 @@ function App() {
   if (!user) {
     return (
       <Routes>
-        <Route path="/" element={<Navigate to="/login" replace />} />
         <Route
           path="/login"
           element={<LoginPage handleSignUpOrLogin={handleSignUpOrLogin} />}
@@ -119,32 +117,7 @@ function App() {
           path="/signup"
           element={<SignupPage handleSignUpOrLogin={handleSignUpOrLogin} />}
         />
-        <Route
-          path="/search"
-          element={
-            <SearchPage
-              getSearchedLocation={getSearchedLocation}
-              foundLocations={foundLocations}
-              user={user}
-              handleLogOut={handleLogOut}
-              changeScale={changeScale}
-            />
-          }
-        />
-        {/* Since no user is logged in, this route (/mylocations) will automatically redirect to the LoginPage */}
-        <Route path="/locations" element={<Navigate to="/login" replace />} />
-        <Route
-          path="/:locationUrl"
-          element={
-            <LocationPage
-              user={user}
-              pinnedLocations={pinnedLocations}
-              getPinnedLocations={getPinnedLocations}
-              handleLogOut={handleLogOut}
-              changeScale={changeScale}
-            />
-          }
-        />
+        <Route path="/*" element={<Navigate to="/login" replace />} />
       </Routes>
     )
   }

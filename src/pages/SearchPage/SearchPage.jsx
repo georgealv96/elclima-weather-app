@@ -26,7 +26,7 @@ export default function SearchPage({
       {locations.length > 0 ? (
         <ul>{locations}</ul>
       ) : (
-        <h2>No locations found. Try something else!</h2>
+        <h4>No locations found. Try something else!</h4>
       )}
     </main>
   )
