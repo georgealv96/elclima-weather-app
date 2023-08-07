@@ -26,6 +26,9 @@ function App() {
   // Defining the state that will hold the current pinned locations by the user
   const [pinnedLocations, setPinnedLocations] = useState([])
 
+  // Defining the state that will hold the measurement scale for the temperatures
+  const [scale, setScale] = useState('f')
+
   const [loading, setLoading] = useState(true)
 
   // This function will pass whatever the user searches for from the SearchBar component to the HomePage and update the state location that holds that information
@@ -36,6 +39,11 @@ function App() {
   // This function will update the user state every time someone logs in or signs up (it's called in LoginPage and SignupPage when the submit button is being handled)
   function handleSignUpOrLogin() {
     setUser(userService.getUser())
+  }
+
+  // This function will switch the scale from Fahrenheit to Celsius and vice versa
+  function changeScale() {
+    scale === 'f' ? setScale('c') : setScale('f')
   }
 
   useEffect(() => {
@@ -85,7 +93,13 @@ function App() {
   }
 
   const locations = pinnedLocations.map((pinnedLocation, idx) => {
-    return <ForecastPreview pinnedLocation={pinnedLocation} key={idx} />
+    return (
+      <ForecastPreview
+        pinnedLocation={pinnedLocation}
+        scale={scale}
+        key={idx}
+      />
+    )
   })
 
   if (loading) {
@@ -113,6 +127,7 @@ function App() {
               foundLocations={foundLocations}
               user={user}
               handleLogOut={handleLogOut}
+              changeScale={changeScale}
             />
           }
         />
@@ -126,6 +141,7 @@ function App() {
               pinnedLocations={pinnedLocations}
               getPinnedLocations={getPinnedLocations}
               handleLogOut={handleLogOut}
+              changeScale={changeScale}
             />
           }
         />
@@ -144,6 +160,8 @@ function App() {
             user={user}
             handleLogOut={handleLogOut}
             pinnedLocations={pinnedLocations}
+            changeScale={changeScale}
+            scale={scale}
           />
         }
       />
@@ -163,6 +181,8 @@ function App() {
             foundLocations={foundLocations}
             user={user}
             handleLogOut={handleLogOut}
+            changeScale={changeScale}
+            scale={scale}
           />
         }
       />
@@ -175,6 +195,8 @@ function App() {
             user={user}
             handleLogOut={handleLogOut}
             locations={locations}
+            changeScale={changeScale}
+            scale={scale}
           />
         }
       />
@@ -186,6 +208,8 @@ function App() {
             pinnedLocations={pinnedLocations}
             getPinnedLocations={getPinnedLocations}
             handleLogOut={handleLogOut}
+            changeScale={changeScale}
+            scale={scale}
           />
         }
       />

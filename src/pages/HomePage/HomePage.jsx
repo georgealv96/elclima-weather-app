@@ -10,7 +10,9 @@ export default function HomePage({
   getSearchedLocation,
   user,
   handleLogOut,
-  pinnedLocations
+  pinnedLocations,
+  changeScale,
+  scale
 }) {
   // These variables are used to calculate random values for the latitude and the longitude in decimal degree
   const minNumberLatitude = Math.ceil(-90)
@@ -20,7 +22,12 @@ export default function HomePage({
 
   return (
     <main className="HomePage">
-      <PageHeader user={user} handleLogOut={handleLogOut} />
+      <PageHeader
+        user={user}
+        handleLogOut={handleLogOut}
+        changeScale={changeScale}
+        scale={scale}
+      />
       {user ? <h1>Welcome, {user.username}!</h1> : <h1>Welcome!</h1>}
       <SearchBar getSearchedLocation={getSearchedLocation} />
       <section>
@@ -33,6 +40,7 @@ export default function HomePage({
               Math.random() * (maxNumberLongitude - minNumberLongitude) +
                 minNumberLongitude
             )}`}
+            scale={scale}
           />
           <Link to="/search">
             <button>SEARCH OTHER LOCATIONS</button>
@@ -46,6 +54,7 @@ export default function HomePage({
                   Math.floor(Math.random() * pinnedLocations.length)
                 ]
               }
+              scale={scale}
             />
             <Link to="/locations">
               <button>ALL MY LOCATIONS</button>

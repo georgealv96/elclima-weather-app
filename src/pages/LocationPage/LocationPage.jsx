@@ -10,7 +10,9 @@ export default function LocationPage({
   user,
   pinnedLocations,
   getPinnedLocations,
-  handleLogOut
+  handleLogOut,
+  changeScale,
+  scale
 }) {
   // This is the base URL to the API to search for the specific location's current forecast
   const currentForecastUrl =
@@ -55,12 +57,21 @@ export default function LocationPage({
 
   return (
     <main className="LocationPage">
-      <PageHeader user={user} handleLogOut={handleLogOut} />
+      <PageHeader
+        user={user}
+        handleLogOut={handleLogOut}
+        changeScale={changeScale}
+        scale={scale}
+      />
       <section id="location-section">
         <h1>
           {locationData.city}, {locationData.region}, {locationData.country}
         </h1>
-        <h3>{forecast.temp_f} degrees Fahrenheit</h3>
+        {scale === 'f' ? (
+          <h3>{Math.round(parseFloat(forecast.temp_f))} degrees Fahrenheit</h3>
+        ) : (
+          <h3>{Math.round(parseFloat(forecast.temp_c))} degrees Celsius</h3>
+        )}
         <img src={condition.icon} alt={condition.text} />
         <h3>{condition.text}</h3>
         <PinLocationButton

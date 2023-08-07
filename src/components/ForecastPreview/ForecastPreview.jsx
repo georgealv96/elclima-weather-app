@@ -2,7 +2,9 @@ import { Link } from 'react-router-dom'
 import { useEffect, useState } from 'react'
 import './ForecastPreview.css'
 
-export default function ForecastPreview({ pinnedLocation }) {
+import PinLocationButton from '../PinLocationButton/PinLocationButton'
+
+export default function ForecastPreview({ pinnedLocation, scale }) {
   // This is the base URL to the API to search for the specific location's current forecast
   const currentForecastUrl =
     'http://api.weatherapi.com/v1/current.json?key=f5cc5abf3e7d430c9f9155717230108&q='
@@ -40,7 +42,11 @@ export default function ForecastPreview({ pinnedLocation }) {
           alt={location.current.condition.text}
         />
         <h3>{location.current.condition.text}</h3>
-        <h1>{Math.round(parseFloat(location.current.temp_f))} °F</h1>
+        {scale === 'f' ? (
+          <h1>{Math.round(parseFloat(location.current.temp_f))} °F</h1>
+        ) : (
+          <h1>{Math.round(parseFloat(location.current.temp_c))} °C</h1>
+        )}
         <h3>Humidity: {location.current.humidity}%</h3>
       </div>
     </Link>
