@@ -82,12 +82,12 @@ function App() {
   }
 
   useEffect(() => {
-    getPinnedLocations()
-  }, [])
+    if (user) getPinnedLocations()
+  }, [user])
 
   // This function will remove the JWT token from local storage and log the user out
   function handleLogOut() {
-    setUser(userService.logout())
+    userService.logout()
     setUser(null)
   }
 
