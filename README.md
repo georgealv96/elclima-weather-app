@@ -22,7 +22,6 @@ This project was challenging to work on at times but that's what made it such a 
 ## Some of the biggest challenges were:
 
 -Realizing that getting the data from the third-party API takes more time than what the computer does when running the application. <br>
--Debugging the response from the HTTP delete request. <br>
 -Implementing the useEffect hook on React in an effective way. <br>
 -Designing the architecture of the application on the React side. <br>
 -Debugging issues with the HTTP Delete request in the back-end.
