@@ -26,7 +26,7 @@
   width: 22.5vw;
 }
 
-#container-1 button, #container-2 button {
+#container-1 button, #container-2 button, #pin-button button {
   width: 35vmin;
   margin-top: 2vmin;
   border: none;

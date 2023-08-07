@@ -52,7 +52,7 @@ export default function LocationPage({
         <h1>
           {locationData.city}, {locationData.region}, {locationData.country}
         </h1>
-        <h3>{forecast.temp_f} degrees Celsius</h3>
+        <h3>{forecast.temp_f} degrees Fahrenheit</h3>
         <img src={condition.icon} alt={condition.text} />
         <h3>{condition.text}</h3>
         <PinLocationButton

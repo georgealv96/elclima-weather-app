@@ -3,5 +3,14 @@
   background-color: rgb(225, 225, 225);
   text-align: center;
   padding-top: 10vmin;
+  color: #27395a;
+}
+
+#location-section h1 {
+  font-size: 5vmin;
+}
+
+#location-section h3 {
+  font-size: 3.5vmin;
 }
 

@@ -25,7 +25,7 @@ export default function PinLocationButton({
   }
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit} id="pin-button">
       {user ? (
         isPinned ? (
           <button>UNPIN LOCATION</button>

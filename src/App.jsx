@@ -98,7 +98,7 @@ function App() {
   if (!user) {
     return (
       <Routes>
-        <Route
+        {/* <Route
           path="/"
           element={
             <HomePage
@@ -108,7 +108,8 @@ function App() {
               pinnedLocations={pinnedLocations}
             />
           }
-        />
+        /> */}
+        <Route path="/" element={<Navigate to="/login" replace />} />
         <Route
           path="/login"
           element={<LoginPage handleSignUpOrLogin={handleSignUpOrLogin} />}
