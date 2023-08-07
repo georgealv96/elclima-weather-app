@@ -1,3 +1,8 @@
+.SearchPage {
+  background-color: rgb(225, 225, 225);
+  height: 100vh;
+}
+
 .SearchPage ul {
   display: flex;
   flex-direction: column;

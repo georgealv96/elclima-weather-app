@@ -2,8 +2,6 @@ import { Link } from 'react-router-dom'
 import { useEffect, useState } from 'react'
 import './ForecastPreview.css'
 
-import PinLocationButton from '../PinLocationButton/PinLocationButton'
-
 export default function ForecastPreview({ pinnedLocation, scale }) {
   // This is the base URL to the API to search for the specific location's current forecast
   const currentForecastUrl =

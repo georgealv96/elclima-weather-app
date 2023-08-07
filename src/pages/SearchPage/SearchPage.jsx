@@ -23,7 +23,11 @@ export default function SearchPage({
         scale={scale}
       />
       <SearchBar getSearchedLocation={getSearchedLocation} />
-      <ul>{locations}</ul>
+      {locations.length > 0 ? (
+        <ul>{locations}</ul>
+      ) : (
+        <h2>No locations found. Try something else!</h2>
+      )}
     </main>
   )
 }

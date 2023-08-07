@@ -37,12 +37,10 @@ async function index(req, res) {
 
 async function deleteLocation(req, res) {
   try {
-    const location = await Location.findOne({
+    await Location.findOneAndRemove({
       user: req.user,
       url: req.params.locationUrl
     })
-    location.remove(req.params.id)
-    await location.save()
     res.json({ data: 'Location removed' })
   } catch (err) {
     res.status(400).json({ error: err })

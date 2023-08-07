@@ -4,7 +4,6 @@ import './LocationPage.css'
 
 import PinLocationButton from '../../components/PinLocationButton/PinLocationButton'
 import PageHeader from '../../components/Header/Header'
-import ForecastPreview from '../../components/ForecastPreview/ForecastPreview'
 
 export default function LocationPage({
   user,
@@ -82,7 +81,6 @@ export default function LocationPage({
           getPinnedLocations={getPinnedLocations}
         />
       </section>
-      {/* <ForecastPreview pinnedLocation={locationUrl} /> */}
     </main>
   )
 }

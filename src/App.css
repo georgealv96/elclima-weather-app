@@ -97,3 +97,9 @@ a:hover {
   cursor: pointer;
 }
 /* End of the styling of LoginPage and SignupPage */
+
+.PinnedLocationsPage h2, .SearchPage h2 {
+  text-align: center;
+  padding-top: 10vmin;
+  font-family: 'Questrial', sans-serif;
+}

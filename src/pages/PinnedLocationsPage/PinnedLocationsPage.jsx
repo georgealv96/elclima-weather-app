@@ -1,6 +1,3 @@
-import { useEffect, useState } from 'react'
-import { Link } from 'react-router-dom'
-
 import './PinnedLocationsPage.css'
 
 import PageHeader from '../../components/Header/Header'
@@ -21,7 +18,11 @@ export default function PinnedLocationsPage({
         scale={scale}
       />
       <h1>My Locations</h1>
-      <div id="locations-list-container">{locations}</div>
+      {locations.length > 0 ? (
+        <div id="locations-list-container">{locations}</div>
+      ) : (
+        <h2>You have no locations pinned yet!</h2>
+      )}
     </main>
   )
 }

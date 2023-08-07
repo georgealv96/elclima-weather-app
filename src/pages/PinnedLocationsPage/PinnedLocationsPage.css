@@ -11,6 +11,12 @@
   margin-top: 5vmin;
 }
 
+.PinnedLocationsPage h2, .SearchPage h2 {
+  text-align: center;
+  padding-top: 10vmin;
+  font-family: 'Questrial', sans-serif;
+}
+
 .PinnedLocationsPage #locations-list-container {
   padding: 2.5vmin 5vmin 0 5vmin;
   display: flex;

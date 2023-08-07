@@ -1,13 +1,4 @@
 import '../../App.css'
-import {
-  Button,
-  Form,
-  Grid,
-  Header,
-  Image,
-  Message,
-  Segment
-} from 'semantic-ui-react'
 import { useState } from 'react'
 import userService from '../../utils/userService'
 import { Link, useNavigate } from 'react-router-dom'
@@ -78,39 +69,5 @@ export default function LoginPage({ handleSignUpOrLogin }) {
         </form>
       </section>
     </main>
-
-    // <Grid textAlign="center" style={{ height: '100vh' }} verticalAlign="middle">
-    //   <Grid.Column style={{ maxWidth: 450 }}>
-    //     <Header as="h2" color="red" textAlign="center">
-    //       Log in to your account
-    //     </Header>
-    //     <Form size="large" onSubmit={handleSubmit}>
-    //       <Segment stacked>
-    //         <Form.Input
-    //           type="email"
-    //           name="email"
-    //           value={state.email}
-    //           placeholder="e-mail address"
-    //           onChange={handleChange}
-    //           required
-    //         />
-    //         <Form.Input
-    //           type="password"
-    //           name="password"
-    //           value={state.password}
-    //           placeholder="password"
-    //           onChange={handleChange}
-    //           required
-    //         />
-    //         <Button color="yellow" fluid size="large">
-    //           Login
-    //         </Button>
-    //       </Segment>
-    //     </Form>
-    //     <Message>
-    //       New to us? <Link to="/signup">Create an account</Link>
-    //     </Message>
-    //   </Grid.Column>
-    // </Grid>
   )
 }
