@@ -46,5 +46,6 @@ async function deleteLocation(req, res) {
     res.json({ data: 'Location removed' })
   } catch (err) {
     res.status(400).json({ error: err })
+    console.log(err, '< error')
   }
 }

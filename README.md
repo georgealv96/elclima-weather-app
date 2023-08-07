@@ -1,40 +1,28 @@
+# ElClima Weather Web Application
 
-## Setup 
+<!-- ## Link to the website:  -->
 
-1. Clone the repo
-2. Rename the folder to your Project, you can use the `mv` command like `mv Mern-Vite-Boilerplate yourprojectname`
-3. Delete the `.git` file, when you are in the root of the file, you can press `ls` and you should see a `.git` file, then go ahead and run `rm -rf .git`
+This project is a basic MERN Stack weather application that allows a user to create an account and log in, as well as search for different locations in the entire world and their current weather forecast. The logged in user is able to pin (and unpin) any location they desire so it's saved in their personal locations directory and can access them more easily any time they need to check the current weather of such places.
 
+## Technologies Used:
 
-#### Setup your git repo
+-JavaScript <br>
+-Node JS <br>
+-Express <br>
+-Mongoose <br>
+-MongoDB <br>
+-React <br>
+-CSS <br>
+-WeatherAPI (https://www.weatherapi.com/)
 
-1. go to github and create your github and create a repo (Without a readme or liscense you can add that later!)
-2.  Then follow the directions on github that says ```…or create a new repository on the command line```
+## My experience building this project
 
-it should look like this
+This project was challenging to work on at times but that's what made it such a learning experience. There is definitely a lot of room for improvement and more learning when creating this type of applications where we work on its back-end, client side, as well as we implement a third-party API to it.
 
-```
-git init
-git add .
-git commit -m "first commit"
-git remote add origin git@git.generalassemb.ly:SEI-CC/test.git // this will be whatever your address will be
-git push -u origin main
-```
+## Some of the biggest challenges were:
 
-#### Setup the App
+-Realizing that getting the data from the third-party API takes more time than what the computer does when running the application. <br>
+-Debugging the response from the HTTP delete request. <br>
+-Implementing the useEffect hook on React in an effective way. <br>
 
-```npm install```
-
-*DOTENV*
-
-`touch .env`
-
-add your variables
-
-```
-DATABASE_URL=mongodb://localhost:27017/testagramV2
-BUCKET_NAME=catcollectorone
-SECRET=mysecretforjwt
-```
-
-The app is configured, to use those respective key names for the database, jwt secret and aws bucket, of course you'll have your own values
+<!-- ## Screenshots of the website:  -->

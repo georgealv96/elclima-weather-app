@@ -26,7 +26,10 @@ export default function LocationPage({
   // This state holds the location information object from the API
   const [locationData, setLocationData] = useState({})
 
+  const [loading, setLoading] = useState(true)
+
   async function getForecastInfo() {
+    setLoading(true)
     const apiResponse = await fetch(currentForecastUrl + locationUrl)
     const data = await apiResponse.json()
     setForecast(data.current)
@@ -37,13 +40,18 @@ export default function LocationPage({
       country: data.location.country,
       url: locationUrl
     })
+    setLoading(false)
   }
 
   useEffect(() => {
     getForecastInfo()
-  }, [])
+  }, [pinnedLocations])
 
   const isPinned = pinnedLocations.some((location) => location === locationUrl)
+
+  if (loading) {
+    return null
+  }
 
   return (
     <main className="LocationPage">

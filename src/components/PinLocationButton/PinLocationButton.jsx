@@ -17,8 +17,8 @@ export default function PinLocationButton({
       } else {
         await locationApi.create(locationData)
       }
-      getForecastInfo()
       getPinnedLocations()
+      getForecastInfo()
     } catch (err) {
       console.log(err, ' error in handleSubmit PinLocationButton')
     }

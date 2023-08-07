@@ -84,8 +84,6 @@ function App() {
     setUser(null)
   }
 
-  console.log(user, '!!!')
-
   const locations = pinnedLocations.map((pinnedLocation, idx) => {
     return <ForecastPreview pinnedLocation={pinnedLocation} key={idx} />
   })
@@ -98,17 +96,6 @@ function App() {
   if (!user) {
     return (
       <Routes>
-        {/* <Route
-          path="/"
-          element={
-            <HomePage
-              getSearchedLocation={getSearchedLocation}
-              user={user}
-              handleLogOut={handleLogOut}
-              pinnedLocations={pinnedLocations}
-            />
-          }
-        /> */}
         <Route path="/" element={<Navigate to="/login" replace />} />
         <Route
           path="/login"
