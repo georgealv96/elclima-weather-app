@@ -10,6 +10,7 @@ require('./config/database')
 
 const app = express()
 
+app.set('view engine', 'ejs')
 // add in when the app is ready to be deployed
 // app.use(favicon(path.join(__dirname, 'build', 'favicon.ico')));
 app.use(logger('dev'))
@@ -24,11 +25,14 @@ app.use('/api/users', require('./routes/api/users'))
 app.use('/api/locations', require('./routes/api/locations'))
 
 // "catch all" route
-app.get('/*', function (req, res) {
-  res.sendFile(path.join(__dirname, 'public', 'index.html'))
-})
+const manifest = require('./dist/manifest.json')
 
-const port = process.env.PORT || 3001
+app.use(express.static(path.join(__dirname, 'dist')))
+
+// "catch all" route
+app.get('/*', function (req, res) {
+  res.render(path.join(__dirname, 'dist', 'index.ejs'), { manifest })
+})
 
 const { PORT = 8000 } = process.env
 app.listen(PORT, () => {
