@@ -1,6 +1,6 @@
 # ElClima Weather Web Application
 
-<!-- ## Link to the website:  -->
+## Link to the website: https://elclima-weather.onrender.com/
 
 This project is a basic MERN Stack weather application that allows a user to create an account and log in, as well as search for different locations in the entire world and their current weather forecast. The logged in user is able to pin (and unpin) any location they desire so it's saved in their personal locations directory and can access them more easily any time they need to check the current weather of such places.
 
