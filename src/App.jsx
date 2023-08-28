@@ -50,14 +50,16 @@ function App() {
     console.log('useEffect is running')
     // This function will search for different locations from the API
     async function searchForLocation() {
-      const weatherApiUrl = `http://api.weatherapi.com/v1/search.json?key=f5cc5abf3e7d430c9f9155717230108&q=${searchedLocation}`
+      const weatherApiUrl = `https://api.weatherapi.com/v1/search.json?key=f5cc5abf3e7d430c9f9155717230108&q=${searchedLocation}`
       try {
         const apiResponse = await fetch(weatherApiUrl)
         const data = await apiResponse.json()
+        setLoading(false)
         console.log('data > ', data)
         setFoundLocations(data)
       } catch (err) {
         console.log(err, ' error from API call')
+        setLoading(false)
       }
     }
 
@@ -101,9 +103,9 @@ function App() {
     )
   })
 
-  if (loading) {
-    return null
-  }
+  // if (loading) {
+  //   return null
+  // }
 
   // If there's not a user logged in, render the following routes
   if (!user) {
