@@ -15,7 +15,7 @@ export default function LocationPage({
 }) {
   // This is the base URL to the API to search for the specific location's current forecast
   const currentForecastUrl =
-    'http://api.weatherapi.com/v1/current.json?key=f5cc5abf3e7d430c9f9155717230108&q='
+    'https://api.weatherapi.com/v1/current.json?key=f5cc5abf3e7d430c9f9155717230108&q='
 
   // Taking the param name from the <Route path="/:locationUrl"> in the App.js
   const { locationUrl } = useParams()
